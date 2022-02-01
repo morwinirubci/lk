@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">   
+    <title>Подать заявку</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div id="header">		
+                <div class="flex-box1">
+                    <img class ="img" src="../toapply/img/logo.gif" alt="СЭТ"> 
+                </div>
+                <div class="flex-box2">
+                       <p>Электросетевая компания «Сетьэнерготранс»</p>
+                </div>
+            </div>
+            <ul class="MainMenu">
+                <li class="active"><a href="http://set-56.ru/" title="Главная">Главная</a></li>
+                <li><a href="http://www.set-56.ru/kompanii/raskrytie-informacii" title="Раскрытие информации" >Раскрытие информации</a></li>
+                <li><a href="http://set-56.ru/potrebiteljam/obsluzhivanie-potrebitelej" title="Потребителям" >Потребителям</a></li>
+                <li><a href="http://www.set-56.ru/zakupki" title="Закупки" >Закупки</a></li>
+                <li><a href="http://www.set-56.ru/personal" title="Персонал" >Персонал</a></li>
+                <li><a href="http://set-56.ru/kontaktyi" title="Контакты" >Контакты</a></li>
+                <li class="last"><a href="http://set-56.ru/lichnyj-kabinet" title="Личный кабинет" >Личный кабинет</a></li>
+            </ul>       
+        </header>
+
+        <form>
+        <div class="container-box">
+            <div class="flex-box3">
+                <p class="privateO">Личный кабинет</p>
+                <div>
+                    <ul class="leftSide">
+                        <li><a href="../../toapply/index.html"><p class="leftSideLink">Подать заявку</p></a></li>
+                        <li><a href="../../myrequest/index.html"><p class="leftSideLink">Мои заявки</p></a></li>
+                    </ul>
+                </div>
+                <div class="flex_item_btn">
+                    <button class="item_btn">Выйти</button>
+                </div>
+            </div>
+        <div class="container-box2">
+            <h2>Заявка на технологическое присоединение физических лиц</h2>
+            <p>Заявитель(физ.лицо)</p>
+                <input type="text" name="inputFullName" placeholder="ФИО">
+            <p>Документ, удостоверяющий личность</p>
+            <p>Паспорт</p>
+                <input type="number" name="inputSeries" placeholder="Серия">
+                <input type="number" name="inputNumber" placeholder="Номер">
+            <p>Дата выдачи паспорта</p>
+             <input type="date" name="inputData">
+            <p>Кем выдан</p>
+                <input type="text" name="inputGave" placeholder="Кем выдан">
+            <p>Адрес зрегистрации заявителя</p>
+                <input type="text" name="inputRegion" placeholder="Край/область">
+                <input type="text" name="inputLocality" placeholder="Населенный пункт">
+                <input type="text" name="inputStreet" placeholder="Улица">
+                <input type="text" name="inputHouse" placeholder="Дом">
+                <input type="number" name="inputIndex" placeholder="Индекс">
+            <p> Заявка в связи с:</p>
+                <select id="inputReq">
+                    <option>Выберите из списка</option>
+                    <option>Новым строительством</option>
+                    <option>Увеличением мощности</option>
+                </select>
+            <p>Наименование энергопринимающих устройств</p>
+                <textarea placeholder="Названия устройств" id="inputText"></textarea>
+            <p>Место нахождение энергопринимающих устройств</p>
+                <textarea placeholder="Адрес по которому расположены энергопринимающие устройства" id="inputAddress"></textarea>
+            <p>Кадастровый (условный номер)</p>
+                <input type="number" name="inputKadNumber">
+            <p>Уровень напряжения</p>
+                <select id="inputLevel">
+                    <option>Выберите из списка</option>
+                    <option> 0,23 кВ</option>
+                    <option>0,4 кВ</option>
+                    <option> 6 кВ</option>
+                    <option>10 кВ</option>
+                </select>
+            <p>Ранее присоединенная максимальная мощность, кВт</p>
+                <input type="text" name="inputMaxPower">
+            <p>Заявляемая категория надежности энергопринимающих устройств(I,II,III категория, кВт) </p>
+                <input type="text" name="inputCategories">
+            <p>Реквизиты заявителя</p>
+                <input type="tel" name="inputPhone" placeholder="Телефон">
+                <input type="email" name="inputPost" placeholder="E-mail" required>
+            <p>Дополнительные реквизиты заявителя</p>
+            <p>СНИЛС</p>
+                <input type="number" name="inputSnils">
+            <p>Гарантирующий поставщик (энергосбытовая организация),<br> с которым планируется заключение договора электроснабжения (купли-продажи электрической энергии (мощности)</p>
+                <select id="inputSupp">
+                    <option>Выберите из списка</option>
+                    <option>АО ЭнергобыТПлюс</option>
+                    <option>ООО "Мечел-Энерго"</option>
+                    <option>ООО "РУСЭНЕРГОСБЫТ"</option>
+                </select>
+            <p>Приложения</p>
+            <br>
+            <p>План расположения энергопринимающих устройств, которые необходимо присоединить к электрическим сетям сетевой организации</p>
+            <br>
+            <a href="../../plan-epu/Требования к плану ЭПУ заявителя.docx" target="Требования к плану ЭПУ заявителя" class="tarLink">Требования к плану ЭПУ заявителя</a>
+            <input type="file" id="inputEpu" multiple>
+            <br>
+            <p class="tex">Копия документа, подтверждающего право собственности или иное предусмотренное законом основание на объект капитального строительства (нежилое помещение в таком объекте капитального строительства) и (или) земельный участок, на котором расположены (будут располагаться) объекты заявителя, либо право собственности или иное предусмотренное законом основание на энергопринимающие устройства (для заявителей, планирующих осуществить технологическое присоединение энергопринимающих устройств потребителей, расположенных в нежилых помещениях многоквартирных домов или иных объектах капитального строительства, - копия документа, подтверждающего право собственности или иное предусмотренное законом основание на нежилое помещение в таком многоквартирном доме или ином объекте капитального строительства)</p>
+            <input type="file" id="inputFiles" multiple>
+            <button type="button" class="button">Отправить заявку</button>
+            <div id="result"></div>
+        </div>
+        </div>
+        </form>
+        
+        <footer id="footer">		
+            <div class="foot-box6"><img src="../toapply/img/logo1.gif" alt=""/></div>
+            <div class="foot-box7"><p>&copy;2014 ООО «СЕТЬЭНЕРГОТРАНС»<br>(3537) 26-31-81, 26-31-98; E-mail:<br><a href="mailto:set.or0@mail.ru">set.or0@mail.ru.</a></p></div>
+            <div class="f-border"></div>
+        </footer>
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
