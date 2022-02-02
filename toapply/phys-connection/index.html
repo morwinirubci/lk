@@ -15,7 +15,7 @@
         <header>
             <div id="header">		
                 <div class="flex-box1">
-                    <img class ="img" src="../toapply/img/logo.gif" alt="СЭТ"> 
+                    <img class ="img" src="/img/logo.gif" alt="СЭТ">
                 </div>
                 <div class="flex-box2">
                        <p>Электросетевая компания «Сетьэнерготранс»</p>
@@ -38,8 +38,8 @@
                 <p class="privateO">Личный кабинет</p>
                 <div>
                     <ul class="leftSide">
-                        <li><a href="../../toapply/index.html"><p class="leftSideLink">Подать заявку</p></a></li>
-                        <li><a href="../../myrequest/index.html"><p class="leftSideLink">Мои заявки</p></a></li>
+                        <li><a href="/toapply/"><p class="leftSideLink">Подать заявку</p></a></li>
+                        <li><a href="/myrequest/"><p class="leftSideLink">Мои заявки</p></a></li>
                     </ul>
                 </div>
                 <div class="flex_item_btn">
@@ -49,7 +49,9 @@
         <div class="container-box2">
             <h2>Заявка на технологическое присоединение физических лиц</h2>
             <p>Заявитель(физ.лицо)</p>
-                <input type="text" name="inputFullName" placeholder="ФИО">
+                <input type="text" name="firstName" placeholder="Имя">
+                <input type="text" name="surName" placeholder="Фамилия">
+                <input type="text" name="patronymic" placeholder="Отчество">
             <p>Документ, удостоверяющий личность</p>
             <p>Паспорт</p>
                 <input type="number" name="inputSeries" placeholder="Серия">
@@ -58,7 +60,7 @@
              <input type="date" name="inputData">
             <p>Кем выдан</p>
                 <input type="text" name="inputGave" placeholder="Кем выдан">
-            <p>Адрес зрегистрации заявителя</p>
+            <p>Адрес регистрации заявителя</p>
                 <input type="text" name="inputRegion" placeholder="Край/область">
                 <input type="text" name="inputLocality" placeholder="Населенный пункт">
                 <input type="text" name="inputStreet" placeholder="Улица">
@@ -90,10 +92,10 @@
                 <input type="text" name="inputCategories">
             <p>Реквизиты заявителя</p>
                 <input type="tel" name="inputPhone" placeholder="Телефон">
-                <input type="email" name="inputPost" placeholder="E-mail" required>
+                <input type="email" name="inputPost" placeholder="E-mail">
             <p>Дополнительные реквизиты заявителя</p>
-            <p>СНИЛС</p>
-                <input type="number" name="inputSnils">
+            <p>ИНН</p>
+            <input type="number" name="inputInn">
             <p>Гарантирующий поставщик (энергосбытовая организация),<br> с которым планируется заключение договора электроснабжения (купли-продажи электрической энергии (мощности)</p>
                 <select id="inputSupp">
                     <option>Выберите из списка</option>
@@ -105,7 +107,7 @@
             <br>
             <p>План расположения энергопринимающих устройств, которые необходимо присоединить к электрическим сетям сетевой организации</p>
             <br>
-            <a href="../../plan-epu/Требования к плану ЭПУ заявителя.docx" target="Требования к плану ЭПУ заявителя" class="tarLink">Требования к плану ЭПУ заявителя</a>
+            <a href="/plan-epu/Требования к плану ЭПУ заявителя.docx" target="Требования к плану ЭПУ заявителя" class="tarLink">Требования к плану ЭПУ заявителя</a>
             <input type="file" id="inputEpu" multiple>
             <br>
             <p class="tex">Копия документа, подтверждающего право собственности или иное предусмотренное законом основание на объект капитального строительства (нежилое помещение в таком объекте капитального строительства) и (или) земельный участок, на котором расположены (будут располагаться) объекты заявителя, либо право собственности или иное предусмотренное законом основание на энергопринимающие устройства (для заявителей, планирующих осуществить технологическое присоединение энергопринимающих устройств потребителей, расположенных в нежилых помещениях многоквартирных домов или иных объектах капитального строительства, - копия документа, подтверждающего право собственности или иное предусмотренное законом основание на нежилое помещение в таком многоквартирном доме или ином объекте капитального строительства)</p>
@@ -117,7 +119,7 @@
         </form>
         
         <footer id="footer">		
-            <div class="foot-box6"><img src="../toapply/img/logo1.gif" alt=""/></div>
+            <div class="foot-box6"><img src="/img/logo1.gif" alt=""/></div>
             <div class="foot-box7"><p>&copy;2014 ООО «СЕТЬЭНЕРГОТРАНС»<br>(3537) 26-31-81, 26-31-98; E-mail:<br><a href="mailto:set.or0@mail.ru">set.or0@mail.ru.</a></p></div>
             <div class="f-border"></div>
         </footer>

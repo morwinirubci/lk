@@ -24,6 +24,7 @@ body {
     font: 32px 'Roboto', 'Times New Roman', 'Arial', sans-serif;
 }
 .MainMenu{
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     list-style: none;

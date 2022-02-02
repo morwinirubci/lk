@@ -27,6 +27,7 @@ body {
     font: 32px 'MyriadPro','Times New Roman', 'Arial', sans-serif;
 }
 .MainMenu{
+
     display: flex;
     list-style: none;
     align-items: center;

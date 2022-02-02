@@ -34,6 +34,11 @@ window.onload = function(){
     var inp_CodeR = document.querySelector('input[name=inputCodeR]');
     var inp_inputDoc = document.querySelector('#inputDoc');
     var inp_Supp = document.querySelector('#inputSupp');
+
+    let btn = document.querySelector(".item_btn").onclick = function () {
+        localStorage.setItem('access_token', '');
+        window.location.href = "/authorization/";
+    }
     
 
 
@@ -77,7 +82,9 @@ window.onload = function(){
         }
 
 
-        console.log( jurConnectionData);
+
+
+
         var params = JSON.stringify(jurConnectionData);
         ajaxPost(params);
     };
@@ -97,6 +104,3 @@ window.onload = function(){
 }
 
 
-const btn = document.querySelector(".item_btn").onclick = function () {
-    window.location.href = "/authorization/index.html";
-}
