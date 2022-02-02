@@ -6,42 +6,52 @@
 body {
     background-color: #ffffff;
     display:flex;
-    justify-content: center;
-    align-items: center;
-
+    margin: auto;
+    max-width: 1000px;
 }
 #header{
     display: flex;
     text-transform: uppercase;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-
-    margin: auto;
-    width: 1000px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    color: #201a56;
+}
+#header:before {
+    content: "";
+    background: url('/img/phone.jpg');
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 .flex-box1{
+    margin-top: 10px;
     margin-right:15px;
 }
 .flex-box2{
-    color: #707070;
-    font: 32px 'MyriadPro','Times New Roman', 'Arial', sans-serif;
+    font: 32px 'Roboto', 'Times New Roman', 'Arial', sans-serif;
+    color: #201a56;
+    border: none;
+    box-shadow: 0 4px 10px 0 #160d60;
 }
 .MainMenu{
+    margin-top: 10px;
     display: flex;
+    justify-content: space-between;
     list-style: none;
-    align-items: center;
-    height: 6px;
-    padding: 0 0 0 60px;
     color: #707070;
     font: 12px/14px 'Arial';
-
 }
 .MainMenu li{
     padding: 10px 13px 0 14px;
     color: #707070;
     font: 12px/14px 'Arial';
-    
-
 }
 .MainMenu li a{
     padding: 10px 8px;
@@ -56,42 +66,37 @@ body {
     background-color: #000000;
     color:#ffffff
 }
-
-
+.container{
+    background-color: rgba(234,239,242, 0.8);
+}
 .container-box{
     display: flex;
-    margin-top: 20px;
-    height: 735px;
-    
+    flex-direction: row;
+    text-align: justify;
+    padding-bottom: 123px;
+
 }
 .container-box p{
     font-family: 'Roboto', 'Times New Roman', 'Arial', sans-serif;
     color: #201a56;
-}
-.container-box h1,h3 {
-    font-family: 'Roboto', 'Times New Roman', 'Arial', sans-serif;
-    color: #201a56;
+    padding: 5px;
 }
 
-.flex-box3, .flex-box4, .flex-box5 {
-    height: 150px;
-    padding: 15px;
-    margin: 50px 30px 50px 30px;
-    margin-bottom: 30px;
+.container-box h1,h2,h3,button,a {
+    text-align: center;
+    font-family: 'Roboto', 'Times New Roman', 'Arial', sans-serif;
+    color: #201a56;
+    margin-bottom: 50px;
 }
 .flex-box3{
-    margin:60px 30px 0 0;
-    align-items: center;
-    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    background-color:#7973ad17;
-    height: 600px;
-    text-align: left;
+    align-items: center;
+    text-align: center;
     font-size: 20px;
-    color:white;
-    font-size: 30px;
+    width: 150px;
+    margin: 0px 30px 0px 0px;
+    padding-left: 20px;
 }
 .privateO{
     border-bottom-style: solid;
@@ -102,32 +107,34 @@ body {
 .leftSide{
     list-style: none;
     padding-top:15px;
-    
 }
 .leftSide li a{
     text-decoration: none;
     color:white;
     font-size: 25px;
-    padding-top:10px;
     padding: 5px 0 0 30px;
     text-align: center;
 }
 .leftSideLink:hover{
     text-decoration: underline;
-
-
 }
-
+.flex-box4, .flex-box5{
+    width: 550px;
+    padding-bottom: 50px;
+    justify-content: space-around;
+    align-items: center;
+}
 .container-box2{
-   margin-bottom:200px;
-   display: flex;
-   flex-direction: column;
-   margin-top:19px;
-}
-.container-box h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin: 50px 0 0 0;
+    font-family: 'Roboto', 'Times New Roman', 'Arial', sans-serif;
+    font-size: 15px;
+    color: #201a56;
+    padding-left: 70px;
 }
+
 .container-box h3 {
     text-align: center;
     margin-bottom: 5px;
@@ -139,39 +146,29 @@ body {
     font-size: 20px;
     text-decoration: none;
 }
-.req:hover {
+.req p:hover{
+    color:white;
+    background-color: rgba(32,26,86, 0.4);
+    border-radius: 20px;
     text-align: center;
-    font-size: 21px;
+    font-size: 23px;
     text-decoration: underline;
 }
 .flex_item_btn{
     display: flex;
-    justify-items: center;
-    align-items: center;
+    margin-top: 200px;
 }
 .item_btn {
-    background-color:#201a56;
+    background-color: #201a56;
     border-radius: 5px;
     text-transform: uppercase;
-
     width: 100px;
     height: 30px;
-    margin:auto;
+    margin: auto;
     color: white;
     font-family: 'Roboto', 'Times New Roman', 'Arial', sans-serif;
     font-size: 16px;
-    text-transform: lowercase;
-    margin: 5px;
 }
-
-
-
-
-
-
-
-
-
 #footer{
     display: flex;
     justify-content: left;

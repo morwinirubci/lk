@@ -1,30 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 body {
-    background-color: #ffffff;
+
     display:flex;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
+    max-width: 1000px;
+    background-color: rgba(234,239,242, 0.8);
 }
 #header{
     display: flex;
     text-transform: uppercase;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding: 10px 0 0 60px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    color: #201a56;
+}
+#header:before {
+    content: "";
+    background: url('/img/phone.jpg');
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 .flex-box1{
+    margin-top: 10px;
     margin-right:15px;
 }
 .flex-box2{
-    color: #707070;
-    font: 32px 'MyriadPro','Times New Roman', 'Arial', sans-serif;
+    font: 32px 'Roboto', 'Times New Roman', 'Arial', sans-serif;
+    color: #201a56;
+    border: none;
+    box-shadow: 0 4px 10px 0 #160d60;
 }
 .MainMenu{
+    margin-top: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     list-style: none;
-    align-items: center;
-    height: 6px;
-    padding: 0 0 0 60px;
     color: #707070;
     font: 12px/14px 'Arial';
 }
@@ -46,9 +67,13 @@ body {
     background-color: #000000;
     color:#ffffff
 }
+.container{
+    background-color: rgba(234,239,242, 0.8);
+}
 form{
     height: 705px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: 'Roboto', 'Times New Roman', 'Arial', sans-serif;
@@ -56,10 +81,11 @@ form{
 .title{
     font: bolder;
     color: #201a56;
-    margin-bottom: 38px;
+    text-align: center;
+    padding-bottom: 25px;
 }
 input {
-    height: 45px;
+    height: 60px;
     width: 340px;
     font-size: 15px;
     line-height: 16px;
@@ -71,50 +97,34 @@ input:focus{
     border: 1px solid #201a56;
 }
 .container-box {
-    position:absolute;
-    width: 534px;
-    height: 500px;
-    max-width: 410px;
-    background-color: #f0f0f0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(22, 13, 96, 0.04);
+    max-width: 600px;
     border-radius: 20px;
-    padding: 5px 0 0 30px;
+    padding: 30px;
+    height: auto;
 }
-.form-field{
-    margin-bottom: 13px;
-}
-.type {
-    font-weight: bolder;
-    color: #201a56;
-}
-#consumerType {
-    height: 45px;
-    width: 370px;
-    font-size: 15px;
-    line-height: 16px;
-    border-radius: 5px;
-    border: 1px solid #ffffff;
-    padding-left: 25px;
-    margin-bottom: 13px;
-}
-
-.button {
+.button{
     display: block;
     height: 40px;
     background-color:#201a56;
     border-radius: 5px;
     color:#ffffff;
     text-transform: uppercase;
-    width: 370px;
+    width: 250px;
+    margin: auto;
     font: inherit;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
-#result{
-    margin-top: 30px;
-    font-size: 20px;
-    color: brown;
-    font-weight: bold;
-}   
-
+div .item_link{
+    font-family: inherit;
+    font-size: 18px;
+    color: #201a56;
+    text-align: center;
+    margin-bottom: 10px;
+}
 #footer{
     display: flex;
     justify-content: left;
@@ -127,14 +137,14 @@ input:focus{
     border-radius: 5px 5px 0 0;
 }
 .foot-box1{
-    padding:15px 0 0 15px;
+    padding:15px 10px 0 15px;
 }
 .foot-box2{
     font-weight: bold;
-    margin: 0;
+
     color: #707070;
     font: 12px/14px arial;
-    padding: 10px 10px 10px 10px;
+
 }
 .f-border {
     top: -2px;
