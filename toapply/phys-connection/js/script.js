@@ -86,7 +86,7 @@ window.onload = function(){
                     console.log(request.responseText);
             }
         }
-        request.open("POST","/api/v1/bid");
+        request.open("POST","/api/v1/bids");
         request.setRequestHeader('Content-type','application/json');
         request.send(params);
 };

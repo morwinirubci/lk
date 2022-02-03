@@ -54,7 +54,7 @@ function ajaxPost(params){
                 document.querySelector('#result').innerHTML = request.responseText;
         }
     }
-    request.open("POST","/api/v1/user");
+    request.open("POST","/api/v1/users");
     request.setRequestHeader('Content-Type','application/json');
     request.send(params);
 

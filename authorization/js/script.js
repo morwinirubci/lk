@@ -1,6 +1,9 @@
+
 window.onload = function(){
+    /* перекинуть на страницу заявок при правильности токена */
+
+
     if(localStorage.getItem('access_token')) {
-        localStorage.setItem('access_token', '');
         console.log(localStorage.getItem('access_token'));
         console.log('Авторизован');
     }
@@ -30,9 +33,7 @@ window.onload = function(){
             inp_password.style.borderBottom = 'none';
         }
 
-        if (localStorage.getItem('access_token')){
-            window.location.href = "/toapply/";
-        }
+
         ajaxPost(JSON.stringify(userAuth));
     }
     };
@@ -45,6 +46,7 @@ function ajaxPost(params){
         if(request.readyState === 4 && request.status === 200){
                 let result = JSON.parse(request.responseText);
               localStorage.setItem('access_token', result.token);
+              window.location.href = "/toapply/";
                 /* result = {
                 token: ""
                  */
@@ -57,3 +59,6 @@ function ajaxPost(params){
     request.send(params);
 }
 
+if (localStorage.getItem('access_token')){
+    window.location.href = "/toapply/";
+}
