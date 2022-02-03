@@ -53,7 +53,7 @@ function ajaxPost(params){
     }
     request.open("POST","/api/v1/user/token");
     request.setRequestHeader('Content-Type','application/json');
-    request.setRequestHeader("Authorization", "Bearer" + localStorage.getItem('access_token'));
+  /*  request.setRequestHeader("Authorization", "Bearer" + localStorage.getItem('access_token'));*/
     request.send(params);
 }
 
