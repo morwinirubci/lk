@@ -4,25 +4,26 @@
     box-sizing: border-box;
 }
 body {
-
-    display:flex;
     margin: auto;
     max-width: 1000px;
     background-color: rgba(234,239,242, 0.8);
+    min-height: 100vh;
+    height: 900px;
 }
 #header{
     display: flex;
     text-transform: uppercase;
     justify-content: flex-start;
     align-items: center;
-    border-radius: 20px;
     position: relative;
-    z-index: 2;
     color: #201a56;
+    z-index: 2;
+    background: linear-gradient(cornflowerblue,lightgoldenrodyellow);
+
 }
 #header:before {
     content: "";
-    background: url('/img/phone.jpg');
+    background: url('/img/phone1.jpg');
     opacity: 0.2;
     top: 0;
     left: 0;
@@ -34,16 +35,22 @@ body {
 .flex-box1{
     margin-top: 10px;
     margin-right:15px;
+    color: white;
 }
 .flex-box2{
     font: 32px 'Roboto', 'Times New Roman', 'Arial', sans-serif;
     color: #201a56;
-    border: none;
-    box-shadow: 0 4px 10px 0 #160d60;
+    border-radius: 50px;
+    padding:5px;
+    margin-right: 20px;
+    background-color: #EAEFF2CC;
+    opacity: 0.8;
+
 }
 .MainMenu{
-    margin-top: 10px;
     display: flex;
+    flex-direction: row;
+    margin-top: 10px;
     justify-content: space-between;
     list-style: none;
     color: #707070;
@@ -68,18 +75,22 @@ body {
     color:#ffffff
 }
 .container{
+
     background-color: rgba(234,239,242, 0.8);
 }
 form{
-    height: 705px;
+    height: 700px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     font-family: 'Roboto', 'Times New Roman', 'Arial', sans-serif;
+    justify-items: center;
+    justify-content: space-around;
+  /*  margin: 182px 0;*/
+    margin-bottom: auto;
+
+
 }
 .title{
-    font: bolder;
     color: #201a56;
     text-align: center;
     padding-bottom: 25px;
@@ -116,9 +127,9 @@ input:focus{
     margin: auto;
     font: inherit;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
-div .item_link{
+div.item_link{
     font-family: inherit;
     font-size: 18px;
     color: #201a56;
@@ -129,31 +140,40 @@ div .item_link{
     display: flex;
     justify-content: left;
     align-items: center;
-    height: 90px;
-    margin: auto;
+    margin-top:auto;
     position: relative;
-    border: dashed #AFB3B5;
-    border-width: 1px 1px 0;
-    border-radius: 5px 5px 0 0;
+    background: linear-gradient(lightgoldenrodyellow,cornflowerblue);
+    z-index: 2;
+}
+#footer:before {
+    content: "";
+    background: url('/img/phone2.jpg');
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 .foot-box1{
     padding:15px 10px 0 15px;
 }
 .foot-box2{
     font-weight: bold;
-
     color: #707070;
     font: 12px/14px arial;
 
 }
-.f-border {
+/*.f-border {
+    background: linear-gradient(lightgoldenrodyellow,cornflowerblue);
     top: -2px;
     left: 20px;
     right: 20px;
     position: absolute;
     height: 3px;
     background: #AFB3B5;
-}
+}*/
 .foot-box2 p a{
     color:#000000;
     text-decoration: none;
