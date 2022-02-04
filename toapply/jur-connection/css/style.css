@@ -198,7 +198,7 @@ div input, select, textarea{
     text-transform: uppercase;
     width: 100px;
     height: 30px;
-    margin: auto;
+
     color: white;
     font-family: 'Roboto', 'Times New Roman', 'Arial', sans-serif;
     font-size: 16px;
@@ -229,10 +229,11 @@ footer{
     padding:15px 10px 0 15px;
 }
 .foot-box7{
-    font-weight: bold;
-    color: #707070;
-    font: 12px/14px arial;
-
+    font-family: 'Roboto', 'Times New Roman', 'Arial', sans-serif;
+    color: #201a56;
+    font-size: 15px;
+    border: 1px solid #201a56;
+    background-color: rgba(255, 255, 255, 0.47);
 }
 .foot-box7 p a{
     color:#000000;

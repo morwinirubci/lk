@@ -1,8 +1,4 @@
 window.onload = function () {
-    let btn = document.querySelector(".item_btn").onclick = function () {
-        localStorage.setItem('access_token', '');
-        window.location.href = "/authorization/";
-    }
     function ajaxPost(params){
         var request = new XMLHttpRequest();
         request.onreadystatechange = function (){
@@ -17,5 +13,13 @@ window.onload = function () {
 
     }
 
-}
 
+
+if (localStorage.getItem('access_token') === null || localStorage.getItem('access_token') === "") {
+    window.location.href = "/authorization/";
+}
+    document.querySelector("button[class = item_btn]").onclick = function () {
+        localStorage.setItem('access_token', '');
+        window.location.href = "/authorization/";
+    }
+}

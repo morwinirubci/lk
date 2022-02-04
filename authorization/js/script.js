@@ -1,7 +1,5 @@
 
 window.onload = function(){
-    /* перекинуть на страницу заявок при правильности токена */
-
 
     if(localStorage.getItem('access_token')) {
         console.log(localStorage.getItem('access_token'));
@@ -10,7 +8,7 @@ window.onload = function(){
     let validateError = false;
     var inp_login = document.querySelector('input[name=email]');
     var inp_password = document.querySelector('input[name=password]');
-    let res = document.querySelector("#result");
+    var res = document.querySelector("#result");
     
     document.querySelector('button').onclick = function() {
 
@@ -21,36 +19,41 @@ window.onload = function(){
 
         if (inp_login.value === '' || inp_login.value === "null" || inp_login.value.length < 6){
             res.innerHTML = ('Логин должен содержать минимум 6 символов!');
-            inp_login.style.borderBottom = '2px solid brown';
+            inp_login.className = "valid";
             validateError = true;
         }else if(inp_password.value.length < 6){
             res.innerHTML = ('Пароль должен содержать минимум 6 символов!');
-            inp_password.style.borderBottom = '2px solid brown';
+            inp_password.className = "valid";
             validateError = true;
         }else{
             validateError = false;
             res.innerHTML = ('');
-            inp_password.style.borderBottom = 'none';
+            inp_password.classList.remove("valid");
+            inp_login.classList.remove("valid");
         }
-
 
         ajaxPost(JSON.stringify(userAuth));
     }
-    };
+
 
 function ajaxPost(params){
     var request = new XMLHttpRequest();
 
     request.onreadystatechange = function (){
         console.log(request.responseText);
-        if(request.readyState === 4 && request.status === 200){
-                let result = JSON.parse(request.responseText);
-              localStorage.setItem('access_token', result.token);
-              window.location.href = "/toapply/";
-                /* result = {
-                token: ""
-                 */
-            
+        if(request.readyState === 4 && request.status === 200) {
+            let result = JSON.parse(request.responseText);
+            localStorage.setItem('access_token', result.token);
+            window.location.href = "/toapply/";
+            /* result = {
+            token: ""
+             */
+        }else if (request.readyState === 4 && request.status !== 200 && validateError === false)  {
+            document.querySelector("#result2").innerHTML = ('Пользователь не существует, либо данные набраны неверно');
+            inp_password.className = ("valid");
+            inp_login.className = ("valid");
+        }else{
+            document.querySelector("#result2").innerHTML = "";
         }
     }
     request.open("POST","/api/v1/user/token");
@@ -59,6 +62,8 @@ function ajaxPost(params){
     request.send(params);
 }
 
+/*
 if (localStorage.getItem('access_token')){
     window.location.href = "/toapply/";
-}
+}*/
+};

@@ -1,4 +1,5 @@
 window.onload = function(){
+
     
     var inp_OrganizationName = document.querySelector('input[name=inputOrganizationName]');
     var inp_RegistryNumber = document.querySelector('input[name=inputRegistryNumber]');
@@ -81,13 +82,9 @@ window.onload = function(){
             Supp:inp_Supp.options[inp_Supp.selectedIndex].value
         }
 
-
-
-
-
         var params = JSON.stringify(jurConnectionData);
         ajaxPost(params);
-    };
+
 }
 
     function ajaxPost(params){
@@ -104,3 +101,11 @@ window.onload = function(){
 }
 
 
+if (localStorage.getItem('access_token') === null || localStorage.getItem('access_token') === ""){
+    window.location.href = "/authorization/";
+}
+    document.querySelector("button[class = item_btn]").onclick = function () {
+        localStorage.setItem('access_token', '');
+        window.location.href = "/authorization/";
+}
+};

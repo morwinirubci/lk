@@ -84,8 +84,7 @@ ul .MainMenu li{
     background-color: #000000;
     color:#ffffff
 }
-@media screen and (min-width: 350px){
-
+@media screen and (min-width: 300px){
 
     form {
         padding: 20px;
@@ -97,6 +96,8 @@ ul .MainMenu li{
         justify-content: center;
         align-items: center;
         font-family: 'Roboto', 'Times New Roman', 'Arial', sans-serif;
+        max-width: 380px;
+        max-height: 380px;
     }
 }
 .title{
@@ -106,12 +107,14 @@ ul .MainMenu li{
 }
 input {
     height: 60px;
-    width: 340px;
+    min-width: 340px;
     font-size: 15px;
     line-height: 16px;
     border-radius: 5px;
     border: 1px solid #ffffff;
     padding-left: 25px;
+    margin-bottom: 10px;
+
 }
 input:focus{
     border: 1px solid #201a56;
@@ -129,12 +132,34 @@ input:focus{
     margin-top: 20px;
     margin-bottom: 15px;
 }
-div.item_link{
-    font-family: inherit;
-    font-size: 18px;
-    color: #201a56;
+#result,#result2 {
     text-align: center;
-    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: inherit;
+    margin: 10px 0;
+    color:brown;
+    max-width: 400px;
+}
+.valid {
+    box-shadow: 0px 0px 5px 2px brown;
+    border-radius: 5px;
+}
+.item_link {
+    font-family: 'Roboto', 'Times New Roman', 'Arial', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    margin:auto;
+    font-weight: bold;
+    color: #201a56;
+}
+.item_link a{
+    color: cornflowerblue;
+    text-decoration: none;
+}
+.item_link a:hover {
+    text-decoration: underline;
+    color:#201a56;
 }
 footer{
 margin-top: auto;
@@ -163,10 +188,11 @@ margin-top: auto;
     padding:15px 10px 0 15px;
 }
 .foot-box2{
-    font-weight: bold;
-    color: #707070;
-    font: 12px/14px arial;
-
+    font-family: 'Roboto', 'Times New Roman', 'Arial', sans-serif;
+    color: #201a56;
+    font-size: 15px;
+    border: 1px solid #201a56;
+    background-color: rgba(255, 255, 255, 0.47);
 }
 .foot-box2 p a{
     color:#000000;
