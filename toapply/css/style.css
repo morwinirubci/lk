@@ -168,8 +168,8 @@ ul .MainMenu li{
     text-decoration: none;
 }
 .req p:hover{
-    color:white;
-    background-color: rgba(32,26,86, 0.4);
+    color: rgba(32, 26, 86);
+    background-color: rgba(100, 149, 237, 0.1);
     border-radius: 20px;
     text-align: center;
     font-size: 23px;
@@ -189,6 +189,9 @@ ul .MainMenu li{
     color: white;
     font-family: 'Roboto', 'Times New Roman', 'Arial', sans-serif;
     font-size: 16px;
+}
+.item_btn:hover {
+    opacity: 0.7;
 }
 footer{
     margin-top: auto;

@@ -1,6 +1,9 @@
 window.onload = function() {
 
-    let kad = /\d{1,2}:\d{1,2}:\d{6,7}:\d{1,4}/;
+    const method = "POST";
+    let token = sessionStorage.getItem('access_token');
+    const url = 'http://23.111.121.26/api/v1/bids';
+
     var inp_firstName = document.querySelector('input[name=firstName]');
     var inp_surName = document.querySelector('input[name=surName]');
     var inp_patronymic = document.querySelector('input[name=patronymic]');
@@ -19,7 +22,7 @@ window.onload = function() {
     var inp_KadNumber = document.querySelector('input[name=inputKadNumber]');
     var inp_Level = document.querySelector('#inputLevel');
     var inp_MaxPower = document.querySelector('input[name=inputMaxPower]');
-    var inp_Categories = document.querySelector('input[name=inputCategories]');
+    var inp_Categories = document.querySelector('#inputCategories');
     var inp_Phone = document.querySelector('input[name=inputPhone]');
     var inp_Post = document.querySelector('input[name=inputPost]');
     var inp_Inn = document.querySelector('input[name=inputInn]');
@@ -27,79 +30,86 @@ window.onload = function() {
     var inp_Epu = document.querySelector("#inputEpu");
     var inp_Files = document.querySelector("#inputFiles");
     let res = document.querySelector("#result");
-    let btn = document.querySelector('button');
+    let btn = document.querySelector('.button');
+    let par = document.querySelectorAll('form');
 
     btn.onclick = function () {
 
 
-        var physConnectionData = {
-            firstName: inp_firstName.value,
-            surName: inp_surName.value,
-            patronymic: inp_patronymic.value,
-            series: inp_Series.value,
-            number: inp_Number.value,
-            data: inp_Data.value,
-            gave: inp_Gave.value,
-            region: inp_Region.value,
-            locality: inp_Locality.value,
-            street: inp_Street.value,
-            house: inp_House.value,
-            index: inp_Index.value,
-            req: inp_Req.options[inp_Req.selectedIndex].value,
-            text: inp_Text.value,
-            address: inp_Address.value,
-            kadNumber: inp_KadNumber.value,
-            level: inp_Level.options[inp_Level.selectedIndex].value,
-            maxPower: inp_MaxPower.value,
-            categories: inp_Categories.value,
-            phone: inp_Phone.value,
-            post: inp_Post.value,
-            inn: inp_Inn.value,
-            supp: inp_Supp.options[inp_Supp.selectedIndex].value,
-            epu: inp_Epu.value,
-            files: inp_Files.value
-        }
-
-        if (inp_Series.value.length < 4) {
-            res.innerHTML = 'Необходимо 4 цифры';
-            inp_Series.style.borderBottom = '2px solid brown';
-        } else if (inp_Number.value.level < 6) {
-            res.innerHTML = 'Необходимо 6 цифр';
-            inp_Series.style.borderBottom = '2px solid brown';
-        } else if (!kad.test(inp_KadNumber.value)) {
-            res.innerHTML = 'Кадастровый номер должен содержать ":" ';
-            inp_Series.style.borderBottom = '2px solid brown';
-        }
-
-        var params = JSON.stringify(physConnectionData);
-
-        ajaxPost(params);
-        console.log(physConnectionData);
-
-    }
-
-    function ajaxPost(params) {
-        var request = new XMLHttpRequest();
-        request.onreadystatechange = function () {
-            if (request.readyState === 4 && request.status === 200) {
-                document.querySelector('#result').innerHTML = request.responseText;
-                console.log(request.responseText);
+        let data =  {
+            type: inp_Req.value,
+            location: inp_Address.value,
+            conditional_number: inp_KadNumber.value,
+            voltage_level: inp_Level.value,
+            voltage_level_max: inp_MaxPower.value,
+            devices: inp_Text.value,
+            devices_reliability: inp_Categories.value,
+            supplier: inp_Supp.value,
+            applicant: {
+                first_name: inp_firstName.value,
+                last_name: inp_surName.value,
+                second_name: inp_patronymic.value,
+                inn: inp_Inn.value,
+                contacts: {
+                    phone: inp_Phone.value,
+                    email: inp_Post.value
+                },
+                document: {
+                    series: inp_Series.value,
+                    number: inp_Number.value,
+                    date: inp_Data.value,
+                    issued_by: inp_Gave.value
+                },
+                address: {
+                    region: inp_Region.value,
+                    city: inp_Locality.value,
+                    street: inp_Street.value,
+                    building: inp_House.value,
+                    post_code: inp_Index.value
+                }
             }
         }
-        request.open("POST", "/api/v1/bids");
-        request.setRequestHeader('Content-type', 'application/json');
-        request.send(params);
-    };
+        let personData = JSON.stringify(data);
 
-    document.querySelector(".item_btn").onclick = function () {
-        localStorage.setItem('access_token', '');
-        window.location.href = "/authorization/";
+        ajaxPost(method, url, token, getRequestBody(personData,inp_Files));
     }
-    if (localStorage.getItem('access_token') === null || localStorage.getItem('access_token') === "") {
-        window.location.href = "/authorization/";
+
+        function appendFiles(form, inp_Files, key){
+            for (let i = 0; i < inp_Files.files.length; i++){
+                form.append(key + '[]', inp_Files.files[i]);
+            }
+        }
+
+        function getRequestBody(personData,inp_Files){
+            let form = new FormData();
+
+            appendFiles(form, inp_Epu, 'layout_documents');
+            appendFiles(form, inp_Files, 'ownership_documents');
+
+            form.append('data', personData);
+
+            return form;
+        }
+
+        function ajaxPost(method, url, token, body) {
+            let request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                if (request.readyState === 4 && request.status === 200) {
+                    console.log(request.responseText);
+                }else if(request.readyState === 4 && request.status !== 200){
+                    alert('Заполнены не все поля');
+                }
+            }
+            request.open(method, url);
+            request.setRequestHeader("Authorization", "Bearer " + sessionStorage.getItem('access_token'));
+            request.send(body);
+        }
+
+
+
+        document.querySelector(".item_btn").onclick = function () {
+            sessionStorage.setItem('access_token', '');
+            window.location.href = "/authorization/";
+        }
+
     }
-    document.querySelector("button[class = item_btn]").onclick = function () {
-        localStorage.setItem('access_token', '');
-        window.location.href = "/authorization/";
-    }
-}

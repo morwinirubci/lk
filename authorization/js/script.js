@@ -1,8 +1,8 @@
 
 window.onload = function(){
 
-    if(localStorage.getItem('access_token')) {
-        console.log(localStorage.getItem('access_token'));
+    if( sessionStorage.getItem('access_token')) {
+        console.log( sessionStorage.getItem('access_token'));
         console.log('Авторизован');
     }
     let validateError = false;
@@ -13,7 +13,7 @@ window.onload = function(){
     document.querySelector('button').onclick = function() {
 
         var userAuth = {
-            name: inp_login.value,
+            email: inp_login.value,
             password: inp_password.value
         }
 
@@ -43,7 +43,7 @@ function ajaxPost(params){
         console.log(request.responseText);
         if(request.readyState === 4 && request.status === 200) {
             let result = JSON.parse(request.responseText);
-            localStorage.setItem('access_token', result.token);
+            sessionStorage.setItem('access_token', result.token);
             window.location.href = "/toapply/";
             /* result = {
             token: ""
@@ -56,9 +56,8 @@ function ajaxPost(params){
             document.querySelector("#result2").innerHTML = "";
         }
     }
-    request.open("POST","/api/v1/user/token");
+    request.open("POST","/api/v1/users/token");
     request.setRequestHeader('Content-Type','application/json');
-  /*  request.setRequestHeader("Authorization", "Bearer" + localStorage.getItem('access_token'));*/
     request.send(params);
 }
 

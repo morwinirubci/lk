@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">   
     <title>Подать заявку - Юр. лица</title>
+    <script src="js/script_authcheck.js"></script>
 </head>
 <body>
     <div class="container">
@@ -31,7 +32,7 @@
                 <li class="last"><a href="http://set-56.ru/lichnyj-kabinet" title="Личный кабинет" >Личный кабинет</a></li>
             </ul>       
         </header>
-        <form>
+
         <div class="container-box">
             <div class="flex-box3">
                 <p class="privateO">Личный кабинет</p>
@@ -45,6 +46,7 @@
                     <button class="item_btn">Выйти</button>
                 </div>
             </div>
+            <form>
         <div class="container-box2">
             <h2>Заявка на технологическое присоединение юридических лиц</h2>
             <p>Полное наименование организации (ИП), направившей (-го) заявку</p>
@@ -73,6 +75,11 @@
                 <input type="text" name="inputMaxPower">
             <p>Ранее присоединенная максимальная мощность, кВт</p>
                 <input type="text" name="inputConPower">
+            <select type="text" name="inputCategories">
+                <option> I категория </option>
+                <option> II категория </option>
+                <option> III категория </option>
+            </select>
             <p>Класс напряжения ВЛ к которым планируется технологическое присоединение</p>
                 <input type="text" placeholder="" name="inputClassVolt">
             <p>Характер нагрузки (вид экономической деятельности хозяйствующего субъекта)</p>
@@ -125,9 +132,6 @@
             <div class="f-border"></div>
         </footer>
     </div>
-
-
-
 
     <script src="js/script.js"></script>
 </body>

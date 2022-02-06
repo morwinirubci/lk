@@ -1,30 +1,28 @@
 window.onload = function () {
-    let btn = document.querySelector(".item_btn").onclick = function () {
-        localStorage.setItem('access_token', '');
-        window.location.href = "/authorization/";
-    }
-    function ajaxPost(params){
-        var request = new XMLHttpRequest();
-        request.onreadystatechange = function (){
-            console.log(request.responseText);
-            if(request.readyState === 4 && request.status === 200){
-                document.querySelector('#result').innerHTML = request.responseText;
+
+        const request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (request.readyState === 4 && request.status === 200) {
+
+
+                document.querySelector(".id").innerHTML = result.id;
+                console.log(request.responseText);
             }
         }
-        request.open("GET","/api/v1/bids");
 
-        request.send(params);
-
-    }
-
+        request.open("GET", "/api/v1/bids");
+        request.setRequestHeader("Authorization", "Bearer " + localStorage.getItem('access_token'));
+        request.send();
 
 
-if (localStorage.getItem('access_token') === null || localStorage.getItem('access_token') === "") {
-    window.location.href = "/authorization/";
-}
-    document.querySelector("button[class = item_btn]").onclick = function () {
-        localStorage.setItem('access_token', '');
-        window.location.href = "/authorization/";
 
-    }
+
+
+        document.querySelector(".item_btn").onclick = function () {
+            sessionStorage.setItem('access_token', '');
+            window.location.href = "/authorization/";
+
+        }
+
+
 }

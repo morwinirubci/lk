@@ -1,4 +1,7 @@
 window.onload = function(){
+    if (sessionStorage.getItem("access_token")){
+        window.location.href = "/authorization/";
+    }
 
     var validateError = false;
 
@@ -57,7 +60,7 @@ function ajaxPost(params){
         }
 
     }
-    request.open("POST","/api/v1/user");
+    request.open("POST","/api/v1/users");
     request.setRequestHeader('Content-Type','application/json');
     request.send(params);
 

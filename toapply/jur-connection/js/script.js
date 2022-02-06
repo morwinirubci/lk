@@ -1,6 +1,5 @@
 window.onload = function(){
 
-    
     var inp_OrganizationName = document.querySelector('input[name=inputOrganizationName]');
     var inp_RegistryNumber = document.querySelector('input[name=inputRegistryNumber]');
     var inp_Data = document.querySelector('input[name=inputData]');
@@ -19,6 +18,7 @@ window.onload = function(){
     var inp_MaxPower = document.querySelector('input[name=inputMaxPower]');
     var inp_ConPower = document.querySelector('input[name=inputConPower]');
     var inp_ClassVolt = document.querySelector('input[name=inputClassVolt]');
+    var inp_Categories = document.querySelector("input[name=inputCategories]")
     var inp_EcAc = document.querySelector('#inputEcAc');
     var inp_Term = document.querySelector('input[name=inputTerm]');
     var inp_disMaxPower = document.querySelector('#disMaxPower');
@@ -42,8 +42,7 @@ window.onload = function(){
     }
     
 
-
-    document.querySelector('button').onclick = function(){
+    document.querySelector('.button').onclick = function(){
 
         var jurConnectionData = {
             OrganizationName:inp_OrganizationName.value,
@@ -82,30 +81,28 @@ window.onload = function(){
             Supp:inp_Supp.options[inp_Supp.selectedIndex].value
         }
 
-        var params = JSON.stringify(jurConnectionData);
-        ajaxPost(params);
+        ajaxPost(JSON.stringify(jurConnectionData));
 
 }
 
     function ajaxPost(params){
-        var request = new XMLHttpRequest();
+        let request = new XMLHttpRequest();
         request.onreadystatechange = function (){
-            if(request.readyState == 4 && request.status == 200){
+            if(request.readyState === 4 && request.status === 200){
                     document.querySelector('#result').innerHTML = request.responseText;
                     console.log(request.responseText);
             }
         }
+
+
         request.open("POST","/api/v1/bids/corporate");
         request.setRequestHeader('Content-type','application/json');
         request.send(params);
 }
 
 
-if (localStorage.getItem('access_token') === null || localStorage.getItem('access_token') === ""){
-    window.location.href = "/authorization/";
-}
     document.querySelector("button[class = item_btn]").onclick = function () {
-        localStorage.setItem('access_token', '');
+        sessionStorage.setItem('access_token', '');
         window.location.href = "/authorization/";
 }
 };
