@@ -46,42 +46,42 @@
                     <button class="item_btn">Выйти</button>
                 </div>
             </div>
-            <form>
+            <form class="form_item">
             <div id="result"></div>
             <div class="container-box2">
                 <h2>Заявка на технологическое присоединение физических лиц</h2>
                 <p>Заявитель(физ.лицо)</p>
-                <input type="text" name="firstName" placeholder="Имя">
-                <input type="text" name="surName" placeholder="Фамилия">
-                <input type="text" name="patronymic" placeholder="Отчество">
+                <input class="form_items" type="text" name="firstName" placeholder="Имя">
+                <input class="form_items" type="text" name="surName" placeholder="Фамилия">
+                <input class="form_items" type="text" name="patronymic" placeholder="Отчество">
                 <p>Документ, удостоверяющий личность</p>
                 <p>Паспорт</p>
-                <input type="number" name="inputSeries" placeholder="Серия">
-                <input type="number" name="inputNumber" placeholder="Номер">
+                <input class="form_items" type="number" name="inputSeries" placeholder="Серия">
+                <input class="form_items" type="number" name="inputNumber" placeholder="Номер">
                 <p>Дата выдачи паспорта</p>
-                <input type="date" name="inputData">
+                <input class="form_items" type="date" name="inputData">
                 <p>Кем выдан</p>
-                <input type="text" name="inputGave" placeholder="Кем выдан">
+                <input class="form_items" type="text" name="inputGave" placeholder="Кем выдан">
                 <p>Адрес регистрации заявителя</p>
-                <input type="text" name="inputRegion" placeholder="Край/область">
-                <input type="text" name="inputLocality" placeholder="Населенный пункт">
-                <input type="text" name="inputStreet" placeholder="Улица">
-                <input type="text" name="inputHouse" placeholder="Дом">
-                <input type="number" name="inputIndex" placeholder="Индекс">
+                <input class="form_items" type="text" name="inputRegion" placeholder="Край/область">
+                <input class="form_items" type="text" name="inputLocality" placeholder="Населенный пункт">
+                <input class="form_items" type="text" name="inputStreet" placeholder="Улица">
+                <input class="form_items" type="text" name="inputHouse" placeholder="Дом">
+                <input class="form_items" type="number" name="inputIndex" placeholder="Индекс">
                 <p> Заявка в связи с:</p>
-                <select id="inputReq">
+                <select class="form_items" id="inputReq">
                     <option>Выберите из списка</option>
                     <option>Новым строительством</option>
                     <option>Увеличением мощности</option>
                 </select>
                 <p>Наименование энергопринимающих устройств</p>
-                <textarea placeholder="Названия устройств" id="inputText"></textarea>
+                <textarea class="form_items" placeholder="Названия устройств" id="inputText"></textarea>
                 <p>Место нахождение энергопринимающих устройств</p>
-                <textarea placeholder="Адрес по которому расположены энергопринимающие устройства" id="inputAddress"></textarea>
+                <textarea class="form_items" placeholder="Адрес по которому расположены энергопринимающие устройства" id="inputAddress"></textarea>
                 <p>Кадастровый (условный номер)</p>
-                <input type="number" name="inputKadNumber">
+                <input class="form_items" type="number" name="inputKadNumber">
                 <p>Уровень напряжения</p>
-                <select id="inputLevel">
+                <select class="form_items" id="inputLevel">
                     <option>Выберите из списка</option>
                     <option> 0,23 кВ</option>
                     <option>0,4 кВ</option>
@@ -89,21 +89,21 @@
                     <option>10 кВ</option>
                 </select>
                 <p>Ранее присоединенная максимальная мощность, кВт</p>
-                <input type="text" name="inputMaxPower">
+                <input class="form_items" type="text" name="inputMaxPower">
                 <p>Заявляемая категория надежности энергопринимающих устройств(кВт) </p>
-                <select type="text" id="inputCategories">
+                <select class="form_items" type="text" id="inputCategories">
                     <option> I категория </option>
                     <option> II категория </option>
                     <option> III категория </option>
                 </select>
                 <p>Реквизиты заявителя</p>
-                <input type="tel" name="inputPhone" placeholder="Телефон">
-                <input type="email" name="inputPost" placeholder="E-mail">
+                <input class="form_items" type="tel" name="inputPhone" placeholder="Телефон">
+                <input class="form_items" id ='' type="email" name="inputPost" placeholder="E-mail">
                 <p>Дополнительные реквизиты заявителя</p>
                 <p>ИНН</p>
-                <input type="number" name="inputInn">
+                <input class="form_items" type="number" name="inputInn">
                 <p>Гарантирующий поставщик (энергосбытовая организация),<br> с которым планируется заключение договора электроснабжения (купли-продажи электрической энергии (мощности)</p>
-                <select id="inputSupp">
+                <select class="form_items" id="inputSupp">
                     <option>Выберите из списка</option>
                     <option>АО ЭнергобыТПлюс</option>
                     <option>ООО "Мечел-Энерго"</option>
@@ -113,15 +113,23 @@
                 <br>
                 <p>План расположения энергопринимающих устройств, которые необходимо присоединить к электрическим сетям сетевой организации</p>
                 <br>
-                <a href="/plan-epu/Требования к плану ЭПУ заявителя.docx" target="Требования к плану ЭПУ заявителя" class="tarLink">Требования к плану ЭПУ заявителя</a>
+                <a href="/documents/Требования к плану ЭПУ заявителя.docx" target="Требования к плану ЭПУ заявителя" class="tarLink">Требования к плану ЭПУ заявителя</a>
                 <input type="file" id="inputEpu" multiple>
                 <br>
                 <p class="tex">Копия документа, подтверждающего право собственности или иное предусмотренное законом основание на объект капитального строительства (нежилое помещение в таком объекте капитального строительства) и (или) земельный участок, на котором расположены (будут располагаться) объекты заявителя, либо право собственности или иное предусмотренное законом основание на энергопринимающие устройства (для заявителей, планирующих осуществить технологическое присоединение энергопринимающих устройств потребителей, расположенных в нежилых помещениях многоквартирных домов или иных объектах капитального строительства, - копия документа, подтверждающего право собственности или иное предусмотренное законом основание на нежилое помещение в таком многоквартирном доме или ином объекте капитального строительства)</p>
                 <input type="file" id="inputFiles" multiple>
+                <label class="form_item_label">
+                    <p> Я согласен(-а) на обработку своих персональных данных, указанных в заявке для рассылки информации, опросов и другой деятельности ООО "Сетьэнерготранс"</p>
+                    <input class="check_item" type="checkbox" >
+                    <a href="/documents/Политика%20конфиденциальности%20ООО%20СЭТ.docx" target="Политика конфиденциальности">Политика конфиденциальности</a>
+                </label>
                 <button type="button" class="button">Отправить заявку</button>
+                <div class="message_item"></div>
         </div>
-        </form>
-    </div>
+            </form>
+        </div>
+
+
 
         
         <footer id="footer">		
@@ -130,7 +138,6 @@
             <div class="f-border"></div>
         </footer>
     </div>
-
 
 
     <script src="js/script.js"></script>

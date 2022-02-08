@@ -3,7 +3,7 @@ window.onload = function() {
     const method = "POST";
     let token = sessionStorage.getItem('access_token');
     const url = 'http://23.111.121.26/api/v1/bids';
-
+    let regEmail =/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/;
     var inp_firstName = document.querySelector('input[name=firstName]');
     var inp_surName = document.querySelector('input[name=surName]');
     var inp_patronymic = document.querySelector('input[name=patronymic]');
@@ -34,8 +34,6 @@ window.onload = function() {
     let par = document.querySelectorAll('form');
 
     btn.onclick = function () {
-
-
         let data =  {
             type: inp_Req.value,
             location: inp_Address.value,
@@ -96,6 +94,13 @@ window.onload = function() {
             request.onreadystatechange = function () {
                 if (request.readyState === 4 && request.status === 200) {
                     console.log(request.responseText);
+                    btn.style.visibility = 'hidden';
+                    document.querySelector('.message_item').innerHTML = 'Заявка успешно отправлена, нажмите' +
+                        `<a class='msg_item' href=/myrequest/>` + ' Мои заявки ' + `</a>` +
+                        'для получения подробной информации.';
+                }else if(request.readyState === 4 && !regEmail.test(inp_Post.value)){
+                    inp_Post.id = ('valid');
+                    alert('Email введен не верно');
                 }else if(request.readyState === 4 && request.status !== 200){
                     alert('Заполнены не все поля');
                 }

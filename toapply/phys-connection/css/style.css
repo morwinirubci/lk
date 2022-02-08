@@ -140,7 +140,6 @@ form{
     border-radius: 20px;
     padding: 20px;
     background: rgba(100, 149, 237, 0.1);
-
 }
 #result {
     text-align: center;
@@ -155,11 +154,15 @@ form{
     box-shadow: 0px 0px 5px 2px brown;
     border-radius: 5px;
 }
-div input, select, textarea{
+#valid {
+    box-shadow: 0px 0px 5px 2px brown;
+    border-radius: 5px;
+}
+.form_items{
     padding: 5px;
     margin: 5px;
-    width: 100%;
     resize: none;
+    width: 100%;
 }
 .button{
     text-align: center;
@@ -174,7 +177,31 @@ div input, select, textarea{
 .button:hover{
     opacity: 0.7;
 }
-
+.message_item{
+    padding-bottom:10px;
+    color: #178000;
+    font-size: 17px;
+    font-family: 'Roboto', 'Times New Roman', 'Arial', sans-serif;
+    text-align: justify;
+    width: 300px;
+    text-decoration: none;
+}
+.msg_item{
+    text-decoration: none;
+    font-weight: bold;
+}
+.msg_item:hover{
+    text-decoration: underline;
+}
+.form_item_label{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.check_item{
+    margin: 5px;
+    cursor: pointer;
+}
 .container-box2{
     font-family: 'Roboto', 'Times New Roman', 'Arial', sans-serif;
     font-size: 15px;

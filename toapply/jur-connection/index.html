@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/toapply/phys-connection/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">   
@@ -50,68 +50,68 @@
         <div class="container-box2">
             <h2>Заявка на технологическое присоединение юридических лиц</h2>
             <p>Полное наименование организации (ИП), направившей (-го) заявку</p>
-                <input type="text" placeholder="" name="inputOrganizationName">
+                <input class="form_items"  type="text" placeholder="" name="inputOrganizationName">
             <p>Номер записи в Едином государственном реестре (Основной Государственный Регистрационный Номер для юр. лиц и ИП)</p>
-                <input type="number" placeholder="" name="inputRegistryNumber">
+                <input class="form_items"  type="number" placeholder="" name="inputRegistryNumber">
             <p>Дата внесения записи в реестр (для ИП)</p>
-             <input type="date" name="inputData">
+             <input class="form_items"  type="date" name="inputData">
             <p>Фактический адрес организации (заявителя)</p>
-                <input type="text" name="inputRegion" placeholder="Край/область">
-                <input type="text" name="inputLocality" placeholder="Населенный пункт">
-                <input type="text" name="inputStreet" placeholder="Улица">
-                <input type="text" name="inputHouse" placeholder="Дом">
-                <input type="number" name="inputIndex" placeholder="Индекс">
+                <input class="form_items"  type="text" name="inputRegion" placeholder="Край/область">
+                <input class="form_items"  type="text" name="inputLocality" placeholder="Населенный пункт">
+                <input class="form_items"  type="text" name="inputStreet" placeholder="Улица">
+                <input class="form_items"  type="text" name="inputHouse" placeholder="Дом">
+                <input class="form_items"  type="number" name="inputIndex" placeholder="Индекс">
             <p>Юридический адрес организации (заявителя)</p>
-                <input type="text" name="inputRegion2" placeholder="Край/область">
-                <input type="text" name="inputLocality2" placeholder="Населенный пункт">
-                <input type="text" name="inputStreet2" placeholder="Улица">
-                <input type="text" name="inputHouse2" placeholder="Дом">
-                <input type="number" name="inputIndex2" placeholder="Индекс">  
+                <input class="form_items"  type="text" name="inputRegion2" placeholder="Край/область">
+                <input class="form_items"  type="text" name="inputLocality2" placeholder="Населенный пункт">
+                <input class="form_items"  type="text" name="inputStreet2" placeholder="Улица">
+                <input class="form_items"  type="text" name="inputHouse2" placeholder="Дом">
+                <input class="form_items"  type="number" name="inputIndex2" placeholder="Индекс">
             <p>Наименование энергопринимающих устройств</p>
-                <textarea placeholder="Названия устройств" id="inputDevices"></textarea>
+                <textarea class="form_items"  placeholder="Названия устройств" id="inputDevices"></textarea>
             <p>Место нахождение энергопринимающих устройств</p>
-                <textarea placeholder="Адрес по которому расположены энергопринимающие устройства" id="inputDevicesAddress"></textarea>
+                <textarea class="form_items"  placeholder="Адрес по которому расположены энергопринимающие устройства" id="inputDevicesAddress"></textarea>
             <p>Запрашиваемая максимальная мощность энергопринимающих устройств, кВт</p>
-                <input type="text" name="inputMaxPower">
+                <input class="form_items"  type="text" name="inputMaxPower">
             <p>Ранее присоединенная максимальная мощность, кВт</p>
-                <input type="text" name="inputConPower">
-            <select type="text" name="inputCategories">
+                <input class="form_items"  type="text" name="inputConPower">
+            <select class="form_items"  type="text" name="inputCategories">
                 <option> I категория </option>
                 <option> II категория </option>
                 <option> III категория </option>
             </select>
             <p>Класс напряжения ВЛ к которым планируется технологическое присоединение</p>
-                <input type="text" placeholder="" name="inputClassVolt">
+                <input class="form_items"  type="text" placeholder="" name="inputClassVolt">
             <p>Характер нагрузки (вид экономической деятельности хозяйствующего субъекта)</p>
-                <textarea id="inputEcAc"></textarea>
+                <textarea class="form_items"  id="inputEcAc"></textarea>
             <p>Сроки проектирования и поэтапного введения в эксплуатацию энергопринимающих устройств (в том числе по этапам и очередям)</p>
-                <input type="text" name="inputTerm">
+                <input class="form_items"  type="text" name="inputTerm">
             <p>Планируемое распределение максимальной мощности, сроков ввода и сведения о категории надежности электроснабжения при вводе энергопринимающих устройств по этапам и очередям</p>
-                <textarea id="disMaxPower"></textarea>
+                <textarea class="form_items"  id="disMaxPower"></textarea>
             <p>Предложение по порядку расчётов и условиям рассрочки внесения платы за технологическое присоединение для заявителей, максимальная мощность энергопринимающих устройств которых составляет свыше 15 и до 150 кВт включительно</p>
-                <textarea id="calc"></textarea>
+                <textarea class="form_items"  id="calc"></textarea>
             <p>Реквизиты заявителя</p>
-                <input type="tel" placeholder="Телефон" name="inputPhone">
-                <input type="email" placeholder="E-mail" name="inputPost">
+                <input class="form_items"  type="tel" placeholder="Телефон" name="inputPhone">
+                <input class="form_items"  type="email" placeholder="E-mail" name="inputPost">
             <p>Дополнительные реквизиты заявителя</p>
             <p>ИНН</p>
-                <input type="number" name="inputInn">
+                <input class="form_items"  type="number" name="inputInn">
             <p>КПП</p>
-                <input type="number" name="inputKpp">
+                <input class="form_items"  type="number" name="inputKpp">
             <p>БИК</p>
-                <input type="number" name="inputBik">
+                <input class="form_items"  type="number" name="inputBik">
             <p>Наименование банка</p>
-                <input type="text" name="inputBname">
+                <input class="form_items"  type="text" name="inputBname">
             <p>Расчётный счёт</p>
-                <input type="number" name="inputCheck">
+                <input class="form_items"  type="number" name="inputCheck">
             <p>Корреспондентский счёт</p>
-                <input type="number" name="inputKorCheck">
+                <input class="form_items"  type="number" name="inputKorCheck">
             <p>Код основного вида деятельности (ОКВЭД)</p>
-                <input type="text" name="inputCode">
+                <input class="form_items"  type="text" name="inputCode">
             <p>Расшифровка ОКВЭД</p>
-                <input type="text" name="inputCodeR">
+                <input class="form_items"  type="text" name="inputCodeR">
             <p>Гарантирующий поставщик (энергосбытовая организация),<br> с которым планируется заключение договора электроснабжения (купли-продажи электрической энергии (мощности)</p>
-                <select id="inputSupp">
+                <select  class="form_items" id="inputSupp">
                     <option>Выберите из списка</option>
                     <option>АО ЭнергобыТПлюс</option>
                     <option>ООО "Мечел-Энерго"</option>
@@ -119,6 +119,11 @@
                 </select>
             <p>Необходимая документация к заявке</p>
                 <input type="file" id="inputDoc" multiple>
+            <label class="form_item_label">
+                <p> Я согласен(-а) на обработку своих персональных данных, указанных в заявке для рассылки информации, опросов и другой деятельности ООО "Сетьэнерготранс"</p>
+                <input class="check_item" type="checkbox" >
+                <a href="/documents/Политика%20конфиденциальности%20ООО%20СЭТ.docx" target="Политика конфиденциальности">Политика конфиденциальности</a>
+            </label>
             <button type="button" class="button">Отправить заявку</button>
         </div>
         </div>
